@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGradM" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="redGradM" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#b91c1c" />
+    </linearGradient>
+    <linearGradient id="goldGradM" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+  </defs>
+
+  <!-- Full-bleed background for maskable safe-zone -->
+  <rect width="512" height="512" fill="url(#bgGradM)" />
+
+  <!-- Shield scaled down to fit comfortably within the 80% safe circle (radius 204px around (256,256)) -->
+  <g transform="translate(51.2, 51.2) scale(0.8)">
+    <path d="M 128 136 C 128 136 256 104 256 104 C 256 104 384 136 384 136 C 384 272 320 376 256 408 C 192 376 128 272 128 136 Z" fill="url(#redGradM)" />
+    <path d="M 148 152 C 148 152 256 126 256 126 C 256 126 364 152 364 152 C 364 260 310 350 256 380 C 202 350 148 260 148 152 Z" fill="#0f172a" fill-opacity="0.25" stroke="#fecaca" stroke-width="4" stroke-opacity="0.3" />
+
+    <circle cx="256" cy="240" r="76" fill="#090d16" stroke="url(#goldGradM)" stroke-width="6" />
+
+    <text x="256" y="235" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="34" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">IELTS</text>
+    <text x="256" y="270" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="20" font-weight="800" fill="#f59e0b" text-anchor="middle" letter-spacing="3">BAND 9</text>
+
+    <polygon points="256,168 261,180 274,180 263,188 267,200 256,192 245,200 249,188 238,180 251,180" fill="url(#goldGradM)" />
+    <circle cx="206" cy="188" r="4" fill="#fbbf24" />
+    <circle cx="306" cy="188" r="4" fill="#fbbf24" />
+
+    <rect x="176" y="324" width="160" height="34" rx="17" fill="#ffffff" />
+    <text x="256" y="347" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="16" font-weight="900" fill="#dc2626" text-anchor="middle" letter-spacing="4">ACADEMIC</text>
+  </g>
+</svg>

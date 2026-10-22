@@ -1,0 +1,94 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile with IELTS study targets and current progress",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "email": { "type": "string", "maxLength": 256 },
+        "displayName": { "type": "string", "maxLength": 128 },
+        "photoURL": { "type": "string", "maxLength": 512 },
+        "targetBand": { "type": "number" },
+        "targetDate": { "type": "string", "maxLength": 64 },
+        "currentBand": { "type": "number" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "email", "createdAt"]
+    },
+    "MockAttempt": {
+      "title": "MockAttempt",
+      "description": "A Cambridge Academic IELTS mock exam attempt result and analytics",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "userId": { "type": "string", "maxLength": 128 },
+        "bookNumber": { "type": "number" },
+        "testNumber": { "type": "number" },
+        "module": { "type": "string", "enum": ["listening", "reading", "writing", "speaking", "full"] },
+        "score": { "type": "number" },
+        "bandScore": { "type": "number" },
+        "durationSeconds": { "type": "number" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "bookNumber", "testNumber", "module", "bandScore", "createdAt"]
+    },
+    "WritingSubmission": {
+      "title": "WritingSubmission",
+      "description": "IELTS Academic Writing Task 1 or Task 2 essay and AI evaluation",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "userId": { "type": "string", "maxLength": 128 },
+        "taskType": { "type": "string", "enum": ["task1", "task2"] },
+        "promptTitle": { "type": "string", "maxLength": 256 },
+        "promptQuestion": { "type": "string", "maxLength": 2048 },
+        "essayText": { "type": "string", "maxLength": 10000 },
+        "wordCount": { "type": "number" },
+        "overallBand": { "type": "number" },
+        "feedback": { "type": "string", "maxLength": 8000 },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "taskType", "essayText", "overallBand", "createdAt"]
+    },
+    "SpeakingSession": {
+      "title": "SpeakingSession",
+      "description": "IELTS Speaking interview test or practice recording transcript and evaluation",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "userId": { "type": "string", "maxLength": 128 },
+        "partNumber": { "type": "number" },
+        "topic": { "type": "string", "maxLength": 256 },
+        "transcript": { "type": "string", "maxLength": 8000 },
+        "overallBand": { "type": "number" },
+        "feedback": { "type": "string", "maxLength": 8000 },
+        "durationSeconds": { "type": "number" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "partNumber", "overallBand", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profile documents"
+    },
+    "/mock_attempts/{attemptId}": {
+      "schema": "MockAttempt",
+      "description": "Cambridge Academic practice attempts"
+    },
+    "/writing_submissions/{submissionId}": {
+      "schema": "WritingSubmission",
+      "description": "Writing Task 1 & 2 evaluated essays"
+    },
+    "/speaking_sessions/{sessionId}": {
+      "schema": "SpeakingSession",
+      "description": "Speaking practice sessions and scores"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "IELTS Ready - Official Cambridge Mock Tests & Band Score Analytics",
+  "description": "Personalized IELTS preparation platform featuring Cambridge Academic mock tests (1-21), instant AI band scoring for Writing & Speaking, interactive Task 1 visual charts, real-time live examiner simulations, and comprehensive performance analytics.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
